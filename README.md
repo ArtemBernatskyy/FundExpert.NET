@@ -11,20 +11,26 @@ Every day website automatically updates all information. For this purpose there 
 based on cron time.  
 
 Also when you are adding new `Fund` there is also realtime parser which asynchronously parsing information  
+
 ![alt tag](https://s3-eu-west-1.amazonaws.com/bernatskyys/github/2.png)  
 
 Here we are adding `Fund`. As you can see there is only three fields necessary, other fields will be parsed automatically.  
+
 ![alt tag](https://s3-eu-west-1.amazonaws.com/bernatskyys/github/3.png)  
 
 Awesome notification:)  
+
 ![alt tag](https://s3-eu-west-1.amazonaws.com/bernatskyys/github/4.png)  
 
 When `Fund` is parsed there is async notification.  
+
 ![alt tag](https://s3-eu-west-1.amazonaws.com/bernatskyys/github/5.png)  
 
 Here you can see what exactly information was parsed  
+
 ![alt tag](https://s3-eu-west-1.amazonaws.com/bernatskyys/github/6.png)  
 
 And a lot of parsed history date :)  
+
 ![alt tag](https://s3-eu-west-1.amazonaws.com/bernatskyys/github/7.png)  
 
