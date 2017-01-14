@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load stars_tag %}
+
+
+{% block title %}
+    {{ block.super }} | {% trans 'MS Rating' %}
+{% endblock %}
+
+
+{% block head_extra_css %}
+<!-- Table css -->
+<link href="{% static 'theme/plugins/datatables/jquery.dataTables.min.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="page-title"> {% trans "MS Rating" %} </h4>
+    </div>
+</div>
+
+
+<div class="row">
+    {% include 'includes/base_left_menu.html' %}
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-color panel-tabs panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{% trans 'MS Rating' %}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active in">
+                                <table id="datatable" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>{% trans 'Name' %}</th>
+                                            <th>{% trans 'Sector' %}</th>
+                                            <th>{% trans 'MS rating' %}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for fund in funds %}
+                                        <tr id="{{ fund.id }}">
+                                            <td>
+                                            {% include 'includes/likes.html' %}
+                                                <a href="{{ fund.get_absolute_url }}">{{ fund.name }}</a>
+                                            </td>
+                                            
+                                            <td>
+                                                {{ fund.finance_sector|default_if_none:"-" }}
+                                            </td>
+                                            
+                                            <td>
+                                                <span style="visibility:hidden;">{{ fund.ms_rating|default_if_none:"0" }}</span>{{ fund.ms_rating|draw_stars|safe}}
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}
+
+
+
+{% block page_script_base %}
+{% include 'includes/likes_js.html' %}
+{% endblock page_script_base %}
+
+
+{% block extra_script_base %}
+<!-- Datatables-->
+<script src="{% static 'theme/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'theme/plugins/datatables/dataTables.bootstrap.js' %}"></script>
+<!-- Datatable init js -->
+<script src="{% static 'theme/pages/datatables.init.js' %}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#datatable').dataTable({
+                    "pageLength": 50,
+                    "order": [[ 2, "desc" ]]
+                });
+                $('#datatable-keytable').DataTable( { keys: true } );
+                var table = $('#datatable-fixed-header').DataTable( { fixedHeader: true } );
+            } );
+            TableManageButtons.init();
+
+        </script>
+{% endblock %}

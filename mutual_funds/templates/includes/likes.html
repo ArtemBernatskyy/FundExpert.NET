@@ -1,0 +1,14 @@
+{% if request.user.is_authenticated %}
+    {% csrf_token %}
+    <a href="#" class="like_or_unlike_fund">
+    {% if fund in request.user.profile.show_liked_funds %}
+        <i class="fa fa-heart"></i>
+    {% else %}
+        <i class="fa fa-heart-o"></i>
+    {% endif %}
+    </a>
+{% else %}
+    <a href="{% url 'auth_login' %}" class="like_or_unlike_fund">
+        <i class="fa fa-heart-o"></i>
+    </a>       
+{% endif %}

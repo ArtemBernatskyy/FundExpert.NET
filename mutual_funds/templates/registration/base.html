@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+        <div class="clearfix"></div>
+        <div class="wrapper-page">
+            <div class="text-center">
+                <!-- TODO: add index url -->
+                <a href="{% url 'landing:main_page' %}" class="logo"><span>Fund<span>expert</span></span></a>
+            </div>
+            <div class="m-t-80 card-box">
+                <div class="text-center">
+                    <h4 class="text-uppercase font-bold m-b-0">{% block form_title %}{% endblock %}</h4>
+                    <p class="text-muted m-b-0 font-13 m-t-20">
+                        {% block form_description %}{% endblock %}
+                    </p>
+                </div>
+                <div class="panel-body">
+                    {% block form %}{% endblock %}
+                </div>
+            </div>
+            <!-- end card-box-->
+
+            {% block after_form %}
+            {% endblock %}
+        </div>
+        <!-- end wrapper page -->
+{% endblock %}

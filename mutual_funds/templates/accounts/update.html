@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}
+    {{ block.super }} | {{ profile.user.get_full_name }}
+{% endblock %}
+
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="page-title">{% trans 'Update Profile' %}</h4>
+    </div>
+</div>
+
+
+<form method="POST" enctype="multipart/form-data" action="">{% csrf_token %}
+
+    <div class="row">
+        <div class="col-sm-2 col-md-3 col-md-offset-1 col-lg-2 col-lg-offset-2">
+            <div class="form-group">
+                <img alt="" id="image_avatar" class="img-thumbnail" src="{{ profile.get_avatar }}">
+                <span style="display:none">{{ form.avatar_thumbnail }}</span>
+            </div>
+            <a id="browse" class="btn btn-block btn-warning waves-effect waves-light">{% trans 'LOAD' %}</a>
+        </div>
+
+
+
+        <div class="col-sm-10 col-md-8 col-lg-6 card-box">
+            <div class="form-group">
+                <span>{% trans 'Username' %}</span>
+                <input type="text" class="form-control" id="id_username" maxlength="30" name="username" disabled placeholder="Ник пользователя" spellcheck="false" value="{{ profile.user.username|default_if_none:"" }}">
+            </div>
+
+            <div class="form-group">
+                <span>{% trans 'Mail' %}</span>
+                <input class="form-control" type="email" disabled id="id_email" maxlength="254" name="email" value="{{ profile.user.email|default_if_none:"" }}">
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <span>{% trans 'Name' %}</span>
+                    <input class="form-control" type="text" id="id_first_name" maxlength="30" name="first_name" value="{{ profile.user.first_name|default_if_none:"" }}">
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <span>{% trans 'Surname' %}</span>
+                    <input class="form-control" type="text" id="id_last_name" maxlength="30" name="last_name" value="{{ profile.user.last_name|default_if_none:"" }}">
+                </div>
+            </div>
+
+                
+            <div class="form-group">
+                <label for="id_sex_0"><input {% if profile.sex == 1 %}checked="checked"{% endif %} id="id_sex_0" name="sex" type="radio" value="1"> {% trans 'Man' %}</label>
+                <label for="id_sex_1"><input {% if profile.sex == 0 %}checked="checked"{% endif %} id="id_sex_1" name="sex" type="radio" value="0"> {% trans 'Woman' %}</label>
+            </div>
+
+            <div class="form-group">
+                {{ form.birthday }}
+            </div>
+
+
+            <div class="form-group">
+                {{ form.country }}
+            </div>
+
+
+            <div class="form-group">
+                <button class="btn btn-purple waves-effect waves-light">{% trans 'SAVE' %}</button>
+                <a href="#" onclick="javascript:history.back()" class="btn btn-primary waves-effect waves-light"><span class="zmdi zmdi-long-arrow-return"></span> {% trans 'BACK' %}</a>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+
+
+
+{% endblock body %}
+
+
+
+
+
+{% block extra_script_base %}
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <script type="text/javascript">
+                    toastr["warning"]("{{ error|escape }}")
+                </script>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+    <!-- Form wizard -->
+    <script src="{% static 'theme/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js' %}"></script>
+    <script src="{% static 'theme/plugins/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+{% endblock extra_script_base %}
+
+
+
+{% block page_script_base %}
+    {{ block.super }}
+    <script type="text/javascript">
+    $('#browse').click(function(){
+        $(this).parent().find('input').click();
+    });
+
+      $( function() {
+        $( document ).tooltip();
+      } );
+        document.getElementById("id_avatar_thumbnail").onchange = function () {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("image_avatar").src = e.target.result;
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(this.files[0]);
+    };
+
+    </script>
+{% endblock page_script_base %}

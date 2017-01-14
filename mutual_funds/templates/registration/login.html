@@ -1,0 +1,55 @@
+{% extends 'registration/base.html' %}
+
+{% load i18n %}
+{% load bootstrap3 %}
+
+
+{% block title %}
+    {% trans 'Login' %}
+{% endblock %}
+
+{% block form_title %}
+    {% trans 'Login' %}
+{% endblock %}
+
+{% block form %}
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label class="sr-only control-label" for="id_username">{% trans 'Username or email' %}</label>
+            <input class="form-control" id="id_username" maxlength="254" name="username" placeholder="{% trans 'Username or email' %}" required="required" title="" type="text">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only control-label" for="id_password">{% trans 'Password' %}</label>
+            <input class="form-control" id="id_password" name="password" placeholder="{% trans 'Password' %}" required="required" title="" type="password">
+        </div>
+
+
+        <button class="btn btn-bordred btn-block waves-effect waves-light btn-warning w-md  m-b-5" style="    color: black !important;" type="submit">{% trans 'Login' %}</button>
+
+        <div class="form-group m-t-30 m-b-0">
+            <a href="{% url 'auth_password_reset' %}" class="text-muted"><i class="fa fa-lock m-r-5"></i> {% trans 'Forgot password?' %}</a>
+        </div>
+    </form>
+
+
+{% endblock %}
+
+{% block after_form %}
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <p class="text-muted">{% trans 'Sign up' %} <a href="{% url 'registration_register' %}" class="text-primary m-l-5"><b>{% trans 'Now!' %}</b></a></p>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block page_script_base %}
+{% if form.errors %}
+<script type="text/javascript">
+    toastr["warning"]("{% trans 'Please check username or/and password for errors' %}")
+</script>
+{% endif %}
+{% endblock %}

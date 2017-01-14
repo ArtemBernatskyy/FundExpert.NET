@@ -1,0 +1,27 @@
+{% extends 'registration/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    {% trans 'Confirm email' %}
+
+{% endblock %}
+
+
+{% block form %}
+    <div class="m-t-40 card-box">
+        <div class="text-center">
+            <h4 class="text-uppercase font-bold m-b-0">{% trans 'Confirm email' %}</h4>
+        </div>
+        <div class="panel-body text-center">
+            <img src="{% static 'theme/images/mail_confirm.png' %}" alt="img" class="thumb-lg m-t-20 center-block" />
+            <p class="text-muted font-13 m-t-20">
+                {% blocktrans %}
+                    Check email for more information
+                {% endblocktrans %}
+                <strong>{{ email }}</strong>
+            </p>
+        </div>
+    </div>
+{% endblock %}

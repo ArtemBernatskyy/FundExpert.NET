@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}
+    {{ block.super }} | {{ newspost.title|truncatechars:10 }}
+{% endblock %}
+
+
+
+{% block head_page_style %}
+<link href="{% static 'landing/css/landing.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<div class="row">
+    <div class="col-sm-8">
+    <h2 class="page-title">{{ newspost.title }}</h2>
+        
+
+        <img class="featurette-image img-responsive news_post" src="{{ newspost.image.url }}">
+
+        <div class="card-box">
+
+        {{ newspost.text|safe }}
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+
+    {% include 'includes/base_indexes.html' %}
+
+        <h4 class="page-title">{% trans 'Other news' %}</h4>
+        
+        {% for other_new in newspost.get_latest_news %}
+        <div class="gal-detail thumb other_new">
+            <a href="{{ other_new.get_absolute_url }}" class="image-popup" title="Screenshot-1">
+                <img src="{{ other_new.image_thumbnail.url }}" class="thumb-img" alt="work-thumbnail">
+            </a>
+            <h4>{{ other_new.title|truncatechars:30 }}</h4>
+            <p class="text-muted">{{ other_new.text|safe|truncatechars_html:170 }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endblock body %}

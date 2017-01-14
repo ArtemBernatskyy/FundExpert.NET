@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}
+    {{ block.super }} | {{ fund.name }}
+{% endblock %}
+
+
+{% block head_extra_css %}
+    <!--Chartist Chart CSS -->
+    <link rel="stylesheet" href="{% static 'theme/plugins/chartist/dist/chartist.min.css' %}">
+{% endblock head_extra_css %}
+
+
+{% block body %}
+
+<div class="col-sm-12">
+    <h4 class="page-title">{% trans 'Fund detail' %}</h4>
+</div>
+
+
+
+<div class="row">
+    {% include 'includes/base_left_menu.html' %}
+    <div class="col-sm-10">
+        <div class="row fund-detail-row">
+            <div class="col-sm-12">
+                <div class="panel panel-color panel-tabs panel-success fund-detail-panel">
+                    <div class="panel-heading">
+                        <ul class="nav nav-pills pull-right">
+                            <li class="active">
+                                <a href="#navpills-1" data-toggle="tab" class="fund-detail-active" aria-expanded="true">{% trans 'Main' %}</a>
+                            </li>
+                            <li class="">
+                                <a href="#navpills-2" data-toggle="tab" class="fund-detail-active" aria-expanded="false">{% trans 'Management' %}</a>
+                            </li>
+                            <li class="">
+                                <a href="#navpills-3" data-toggle="tab" class="fund-detail-active" aria-expanded="false">{% trans 'Analysis' %}</a>
+                            </li>
+                        </ul>
+                        <h3 class="panel-title">{% trans 'Fund Detail' %}</h3>
+                    </div>
+                    <div class="panel-body fund-detail-body">
+                        <div class="tab-content fund-tab-content">
+                            <div id="navpills-1" class="tab-pane active in">
+                                <div class="row">
+                                    <div class="card-box fund-detail-card-box">
+                                        <h4 class="header-title m-t-0 m-b-30">{% trans 'Basic information' %}</h4>
+                                    {% comment %}
+                                        <div class="col-md-3">
+                                            <div class="m-t-30">
+                                                <address>
+                                                  <strong>Twitter, Inc.</strong><br>
+                                                  795 Folsom Ave, Suite 600<br>
+                                                  San Francisco, CA 94107<br>
+                                                  <abbr title="Phone">P:</abbr> (123) 456-7890
+                                                  </address>
+                                            </div>
+                                        </div><!-- end col -->
+                                    {% endcomment %}
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <span>{% trans 'Name' %}</span>
+                                                    <span class="form-control">{{ fund.name|default_if_none:"-" }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <span>{% trans 'Bloomberg ticker' %}</span>
+                                                    <span class="form-control">{{ fund.bloombreg_ticker|default_if_none:"-" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans 'isin ticker' %}</span>
+                                                    <span class="form-control">{{ fund.isin_ticker|default_if_none:"-" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans 'MS rating' %}</span>
+                                                    <span class="form-control">{{ fund.ms_rating|default_if_none:"" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans 'Sector' %}</span>
+                                                    <span class="form-control">{{ fund.finance_sector|default_if_none:"-" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans 'Birth Date' %}</span>
+                                                    <span class="form-control">{{ fund.birth_date|default_if_none:"-" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans 'current price' %}</span>
+                                                    <span class="form-control">{{ fund.get_newest_price|default_if_none:"-"|safe }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <span>{% trans 'Country' %}</span>
+                                                    <span class="form-control">{{ fund.country.name|default_if_none:"-" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans 'Currency' %}</span>
+                                                    <span class="form-control">{{ fund.currency|default_if_none:"-" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans 'Total assets' %}</span>
+                                                    <span class="form-control">{{ fund.total_assets|default_if_none:"-" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans '52Wk Range' %}</span>
+                                                    <span class="form-control">{{ fund.range_52_weeks|default_if_none:"-" }}</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span>{% trans '1 Yr Return' %}</span>
+                                                    <span class="form-control">{{ fund.return_1_year|default_if_none:"-" }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end row -->
+
+                                <div class="row card-box fund-detail-card-box">
+                                    <div class="col-lg-6">
+                                        <h4 class="header-title m-t-0 m-b-30">{% trans 'Top Fund Holdings' %}</h4>
+                                        <div id="pie-chart" class="ct-chart ct-golden-section"></div>
+                                    </div><!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+
+
+                            <div id="navpills-2" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="card-box fund-detail-card-box">
+                                        <h3 class="m-t-0 m-b-0">{{ fund.management_company|default_if_none:"Add information in admin panel" }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="navpills-3" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="">
+                                        <div class="col-md-12 fund-detail-graph">
+                                            <div id="graph_container" class="card-box fund-detail-card-box"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+
+
+
+
+
+
+
+{% block extra_script_base %}
+<!-- chart-->
+{# <script src="{% static 'theme/plugins/jquery-knob/jquery.knob.js' %}"></script> #}
+<script src="{% static 'plugins/highcharts/highstock.js' %}"></script>
+<!--Chartist Chart-->
+<script src="{% static 'theme/plugins/chartist/dist/chartist.min.js ' %}"></script>
+<script src="{% static 'theme/plugins/chartist/dist/chartist-plugin-tooltip.min.js ' %}"></script>
+<script type="text/javascript">
+    //Pie chart with custom labels
+
+    {% with topfundholdings_data=fund.topfundholdings_data %}    
+    var data = {
+      labels: {{ topfundholdings_data.0|safe }},
+      series: {{ topfundholdings_data.1 }}
+    };
+    {% endwith %}
+    
+    var options = {
+      labelInterpolationFnc: function(value) {
+        return value[0]
+      }
+    };
+
+    var responsiveOptions = [
+      ['screen and (min-width: 640px)', {
+        chartPadding: 30,
+        labelOffset: 100,
+        labelDirection: 'explode',
+        labelInterpolationFnc: function(value) {
+          return value;
+        }
+      }],
+      ['screen and (min-width: 1024px)', {
+        labelOffset: 70,
+        chartPadding: 40
+      }]
+    ];
+
+    new Chartist.Pie('#pie-chart', data, options, responsiveOptions);
+</script>
+{# <script src="{% static 'plugins/highcharts/exporting.js' %}"></script> #}
+
+<script type="text/javascript">
+var opened = 'no';
+$('a[href=#navpills-3]').on('shown.bs.tab', function(){
+    if (opened == 'no'){
+        $(function () {
+            opened = 'yes';
+            $.getJSON("{% url 'fund-api:detail' fund.id %}", function (key, val) {
+                data = key['navs']
+
+                // Create the chart
+                Highcharts.stockChart('graph_container', {
+
+                    rangeSelector: {
+                        selected: 1
+                    },
+
+                    title: {
+                        text: '{{ fund.name }}'
+                    },
+                    chart: {
+                        type: 'column',
+                    },
+
+                    series: [{
+                        name: '{{ fund.name }}',
+                        data: data,
+                        type: 'line',
+                        threshold: null,
+                        color: '#10c469',
+                        tooltip: {
+                            valueDecimals: 2
+                        },
+                        fillColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 0,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, Highcharts.getOptions().colors[0]],
+                                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                            ]
+                        }
+                    }]
+                });
+            });
+        });
+    }
+});
+
+
+$(document).ready(function() {
+    if(location.hash) {
+        $('a[href=' + location.hash + ']').tab('show');
+    }
+    $(document.body).on("click", "a[data-toggle]", function(event) {
+        location.hash = this.getAttribute("href");
+    });
+});
+$(window).on('popstate', function() {
+    var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
+    $('a[href=' + anchor + ']').tab('show');
+});
+</script>
+{% endblock %}

@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load json_deserialize_tag %}
+
+
+
+
+{% block title %}
+    {{ block.super }} | {% trans 'Sectors' %}
+{% endblock %}
+
+
+{% block head_extra_css %}
+<!-- Table css -->
+<link href="{% static 'theme/plugins/datatables/jquery.dataTables.min.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="btn-group pull-right m-t-15">
+            <button type="button" class="btn btn-custom dropdown-toggle waves-light" data-toggle="dropdown" aria-expanded="false">{% trans 'Currency' %} <span class="m-l-5"><i class="fa fa-{% if eur %}eur{%else%}usd{%endif%}"></i></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li class="text-center"><a href="{% if dis %}?dis=on&usd=on{% else %}?cml=on&usd=on{% endif %}"><i class="fa fa-usd"></i> USD</a></li>
+                <li class="divider"></li>
+                <li class="text-center"><a href="{% if dis %}?dis=on&eur=on{% else %}?cml=on&eur=on{% endif %}"><i class="fa fa-eur"></i> EUR</a></li>
+            </ul>
+        </div>
+        <h4 class="page-title"> {% trans "Sectors' ranking" %} </h4>
+    </div>
+</div>
+
+
+<div class="row">
+    {% include 'includes/base_left_menu.html' %}
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-color panel-tabs panel-success">
+                    <div class="panel-heading">
+                        <ul class="nav nav-pills pull-right">
+                            <li class="{% if not dis %}active{% else %}false{%endif%}">
+                                <a href="?cml=on{% if eur %}&eur=on{% else %}&usd=on{% endif %}">{% trans 'Cumulative' %}</a>
+                            </li>
+                            <li class="{% if dis %}active{% else %}false{%endif%}">
+                                <a href="?dis=on{% if eur %}&eur=on{% else %}&usd=on{% endif %}">{% trans 'Discrete' %}</a>
+                            </li>
+                        </ul>
+                        <h3 class="panel-title">{% trans "Sectors' ranking" %}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="">
+                            <div class="">
+                                <table id="sector_datatable" class="table table-striped table-bordered" data-display-length='-1'>
+                                    <thead>
+                                        <tr>
+                                        {% if not dis %}
+                                        {# here goes cumulative and it is default #}
+                                            <th>{% trans 'Name' %}</th>
+                                            <th>{% trans '1m' %}</th>
+                                            <th>{% trans '3m' %}</th>
+                                            <th>{% trans '6m' %}</th>
+                                            <th>{% trans '1y' %}</th>
+                                            <th>{% trans '2y' %}</th>
+                                            <th>{% trans '3y' %}</th>
+                                            <th>{% trans '5y' %}</th>
+                                        {% else %}
+                                        {# here goes discrete #}
+                                            <th>{% trans 'Name' %}</th>
+                                            <th>{% trans '0-12m' %}</th>
+                                            <th>{% trans '12-24m' %}</th>
+                                            <th>{% trans '24-36m' %}</th>
+                                            <th>{% trans '36-48m' %}</th>
+                                            <th>{% trans '48-60m' %}</th>
+                                        {% endif %}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for sector in sectors %}
+                                        <tr>
+                                            <td><a href="{{ sector.get_absolute_url }}">{{ sector.name }}</a></td>
+                                        {% if not dis %}
+                                        {# here goes cumulative and it is default #}
+                                            {% if eur %}
+                                                {% for val in sector.cumulative_eur|decerialise_json %}
+                                                    <td>{{ val }}</td>
+                                                {% endfor %}
+                                            {% else %}
+                                                {% for val in sector.cumulative_usd|decerialise_json %}
+                                                    <td>{{ val }}</td>
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% else %}
+                                        {# here goes discrete #}
+                                            {% if eur %}
+                                                {% for val in sector.discrete_eur|decerialise_json %}
+                                                    <td>{{ val }}</td>
+                                                {% endfor %}
+                                            {% else %}
+                                                {% for val in sector.discrete_usd|decerialise_json %}
+                                                    <td>{{ val }}</td>
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endif %}
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}
+
+
+
+
+
+
+
+
+{% block extra_script_base %}
+<!-- Datatables-->
+<script src="{% static 'theme/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'theme/plugins/datatables/dataTables.bootstrap.js' %}"></script>
+<!-- Datatable init js -->
+<script src="{% static 'theme/pages/datatables.init.js' %}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#sector_datatable').dataTable({
+                    "bPaginate": false,
+                    "bLengthChange": false,
+                    "bFilter": true,
+                    "bInfo": false,
+                    "bAutoWidth": false }
+                );
+                $('#datatable-keytable').DataTable( { keys: true } );
+                var table = $('#datatable-fixed-header').DataTable( { fixedHeader: true } );
+            } );
+            TableManageButtons.init();
+
+        </script>
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}
+    {{ block.super }} | {{ profile.user.get_full_name }}
+{% endblock %}
+
+
+{% block body %}
+
+<div class="col-sm-12">
+    <div class="btn-group pull-right m-t-15">
+        <a href="{% url 'accounts:profile_update' request.user.profile.slug %}" type="button" class="btn btn-custom waves-effect waves-light">{% trans 'Edit' %} <span class="m-l-5"><i class="fa fa-cog"></i></span></a>
+    </div>
+    <h4 class="page-title">{% trans 'Profile' %}</h4>
+</div>
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box profile-tab">
+            <div class="dropdown pull-right">
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active">
+                            <a href="#home1" role="tab" data-toggle="tab">{% trans 'Profile' %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'finance:mf_ranking' %}?mine=on">{% trans 'Monitor' %}</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content profile-tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home1">
+                            <div class="row">
+                                <div class="col-sm-2 col-md-3 col-md-offset-1 col-lg-4 col-lg-offset-2">
+                                    <div class="form-group">
+                                        <img alt="" id="image_avatar" class="img-thumbnail" src="{{ profile.get_avatar }}">
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-sm-10 col-md-8 col-lg-6 card-box profile-card-box">
+                                    <div class="form-group">
+                                        <span>{% trans 'Username' %}</span>
+                                        <span class="form-control" disabled>{{ profile.user.username|default_if_none:"" }}</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span>{% trans 'Mail' %}</span>
+                                        <span class="form-control" disabled>{{ profile.user.email|default_if_none:"" }}</span>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-sm-6">
+                                            <span>{% trans 'Name' %}</span>
+                                            <span class="form-control" disabled>{{ profile.user.first_name|default_if_none:"" }}</span>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <span>{% trans 'Surname' %}</span>
+                                            <span class="form-control" disabled>{{ profile.user.last_name|default_if_none:"" }}</span>
+                                        </div>
+                                    </div>
+
+                                        
+                                    <div class="form-group">
+                                        <input type="radio" {% if profile.sex == 1 %}checked="checked" {% else%}disabled{% endif %}>
+                                        <span>{% trans 'Man' %}</span>
+                                        <input type="radio" {% if profile.sex == 0 %}checked="checked" {% else%}disabled {% endif %}>
+                                        <span>{% trans 'Woman' %}</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ profile.birthday }}
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        {{ profile.country }}
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        {% comment %}
+                        <div role="tabpanel" class="tab-pane fade" id="profile1">
+                            <div class="col-md-6">
+                                <div class="profile-table-border">
+                                    <table class="table">
+                                    {% for fund in profile.show_liked_funds %}
+                                        <tr id="{{ fund.id }}">
+                                            <td>
+                                                <a href="{{ fund.get_absolute_url }}" target="_blank">{{ fund.name|truncatechars:40 }}</a>
+                                            </td>
+                                            <td>
+                                                {% csrf_token %}
+                                                <a href="#" title="Delete" class="fa fa-2x fa-times pull-right edit_icons unlike_fund" aria-hidden="true"></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        {% endcomment %}
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+
+{% endblock body %}

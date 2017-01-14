@@ -1,0 +1,917 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-14 16:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: mutual_funds/accounts/forms.py:33
+msgid "Year"
+msgstr "Год"
+
+#: mutual_funds/accounts/forms.py:33
+msgid "Month"
+msgstr "Месяц"
+
+#: mutual_funds/accounts/forms.py:33
+msgid "Day"
+msgstr "День"
+
+#: mutual_funds/accounts/models.py:38
+msgid "man"
+msgstr "мужчина"
+
+#: mutual_funds/accounts/models.py:39
+msgid "woman"
+msgstr "женщина"
+
+#: mutual_funds/accounts/models.py:40
+msgid "don't show"
+msgstr "скрыть"
+
+#: mutual_funds/accounts/models.py:47
+msgid "gender"
+msgstr "пол"
+
+#: mutual_funds/accounts/models.py:49
+msgid "birthday"
+msgstr "день рождения"
+
+#: mutual_funds/accounts/models.py:50
+msgid "(select country)"
+msgstr "(выбрать страну)"
+
+#: mutual_funds/accounts/views.py:36
+msgid "Profile updated successfully"
+msgstr "Профиль обновлен"
+
+#: mutual_funds/dashboard.py:24
+msgid "Finance"
+msgstr "Финансы"
+
+#: mutual_funds/dashboard.py:36
+msgid "Newsletter"
+msgstr "Новости"
+
+#: mutual_funds/dashboard.py:46
+msgid "Administration"
+msgstr "Администрация"
+
+#: mutual_funds/dashboard.py:56
+msgid "Advanced"
+msgstr "Детальные настройки"
+
+#: mutual_funds/dashboard.py:71
+msgid "Useful websites"
+msgstr "Полезные сайты"
+
+#: mutual_funds/dashboard.py:76
+msgid "Bloomberg"
+msgstr "Bloomberg"
+
+#: mutual_funds/dashboard.py:81
+msgid "Financial times"
+msgstr "Financial times"
+
+#: mutual_funds/dashboard.py:90
+msgid "Recent Actions"
+msgstr "Последние действия"
+
+#: mutual_funds/finance/admin.py:15
+msgid "Publish"
+msgstr "Публиковать"
+
+#: mutual_funds/finance/admin.py:24
+msgid "Parse again"
+msgstr "Парсить снова"
+
+#: mutual_funds/finance/admin.py:31
+msgid "Is parsing on"
+msgstr "Парситься"
+
+#: mutual_funds/finance/admin.py:38
+msgid "Is parsing & Publish"
+msgstr "Парситься & Опубликован"
+
+#: mutual_funds/finance/forms.py:11
+msgid "(all classes)"
+msgstr ""
+
+#: mutual_funds/finance/forms.py:16
+msgid "(all sectors)"
+msgstr "(все классы)"
+
+#: mutual_funds/finance/forms.py:23 mutual_funds/finance/models.py:155
+msgid "total assets"
+msgstr "совокупные активы"
+
+#: mutual_funds/finance/forms.py:30
+msgid "(choose year)"
+msgstr "(выберите год)"
+
+#: mutual_funds/finance/forms.py:35
+msgid "minimal return"
+msgstr "минимальный возврат"
+
+#: mutual_funds/finance/forms.py:41
+msgid "(time period)"
+msgstr "(временной период)"
+
+#: mutual_funds/finance/forms.py:42
+msgid "month"
+msgstr "месяц"
+
+#: mutual_funds/finance/forms.py:43
+msgid "3 months"
+msgstr "3 месяца"
+
+#: mutual_funds/finance/forms.py:44
+msgid "half year"
+msgstr "полгода"
+
+#: mutual_funds/finance/forms.py:45
+msgid "5 years"
+msgstr "5 лет"
+
+#: mutual_funds/finance/forms.py:51
+msgid "(choose rating)"
+msgstr "(выберите рейтинг)"
+
+#: mutual_funds/finance/models.py:39
+msgid "same as at trustnetoffshore"
+msgstr "такой же, как на trustnetoffshore"
+
+#: mutual_funds/finance/models.py:41
+msgid "Tick to make this entry live "
+msgstr ""
+
+#: mutual_funds/finance/models.py:45
+msgid "Cumulative in USD"
+msgstr ""
+
+#: mutual_funds/finance/models.py:46
+msgid "Cumulative in EUR"
+msgstr ""
+
+#: mutual_funds/finance/models.py:47
+msgid "Discrete in USD"
+msgstr ""
+
+#: mutual_funds/finance/models.py:48
+msgid "Discrete in EUR"
+msgstr ""
+
+#: mutual_funds/finance/models.py:118
+msgid "fund name"
+msgstr ""
+
+#: mutual_funds/finance/models.py:121
+msgid ""
+"Tick to make this entry live Note that administrators (like yourself) are "
+"allowed to preview inactive entries whereas the general public aren't."
+msgstr ""
+
+#: mutual_funds/finance/models.py:125
+msgid "using for parsing"
+msgstr ""
+
+#: mutual_funds/finance/models.py:130
+#: mutual_funds/templates/finance/fund_detail.html:75
+msgid "Bloomberg ticker"
+msgstr ""
+
+#: mutual_funds/finance/models.py:135
+msgid "example: ROBAGED:LX"
+msgstr ""
+
+#: mutual_funds/finance/models.py:141
+msgid "ISIN ticker"
+msgstr ""
+
+#: mutual_funds/finance/models.py:146
+msgid "example: LU1274831590:EUR"
+msgstr ""
+
+#: mutual_funds/finance/models.py:151
+msgid "launch date"
+msgstr ""
+
+#: mutual_funds/finance/models.py:156
+msgid "52Wk Range "
+msgstr ""
+
+#: mutual_funds/finance/models.py:157
+#: mutual_funds/templates/finance/fund_detail.html:117
+msgid "1 Yr Return"
+msgstr ""
+
+#: mutual_funds/finance/models.py:233
+msgid "NAV"
+msgstr ""
+
+#: mutual_funds/finance/models.py:234
+msgid "date"
+msgstr ""
+
+#: mutual_funds/landing/models.py:24
+msgid "Suggested value automatically generated from title. Must be unique."
+msgstr ""
+
+#: mutual_funds/landing/models.py:61
+msgid ""
+"Tick to make this entry live (see also the publication date). Note that "
+"administrators (like yourself) are allowed to preview inactive entries "
+"whereas the general public aren't."
+msgstr ""
+
+#: mutual_funds/landing/models.py:68
+msgid "Publication date"
+msgstr ""
+
+#: mutual_funds/landing/models.py:70
+msgid ""
+"For an entry to be published, it must be active and its publication date "
+"must be in the past."
+msgstr ""
+
+#: mutual_funds/templates/accounts/profile.html:15
+msgid "Edit"
+msgstr "Редактировать"
+
+#: mutual_funds/templates/accounts/profile.html:17
+#: mutual_funds/templates/accounts/profile.html:32
+#: mutual_funds/templates/base.html:136
+msgid "Profile"
+msgstr "Профиль"
+
+#: mutual_funds/templates/accounts/profile.html:35
+msgid "Monitor"
+msgstr "Мониторинг"
+
+#: mutual_funds/templates/accounts/profile.html:52
+#: mutual_funds/templates/accounts/update.html:34
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: mutual_funds/templates/accounts/profile.html:57
+#: mutual_funds/templates/accounts/update.html:39
+msgid "Mail"
+msgstr "Почта"
+
+#: mutual_funds/templates/accounts/profile.html:63
+#: mutual_funds/templates/accounts/update.html:45
+#: mutual_funds/templates/finance/fund_detail.html:67
+#: mutual_funds/templates/finance/ms_rating.html:42
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:119
+#: mutual_funds/templates/finance/sector_page.html:42
+#: mutual_funds/templates/finance/sectors_ranking.html:62
+#: mutual_funds/templates/finance/sectors_ranking.html:72
+msgid "Name"
+msgstr "Имя"
+
+#: mutual_funds/templates/accounts/profile.html:68
+#: mutual_funds/templates/accounts/update.html:50
+msgid "Surname"
+msgstr "Фамилия"
+
+#: mutual_funds/templates/accounts/profile.html:76
+#: mutual_funds/templates/accounts/update.html:57
+#, fuzzy
+#| msgid "Main"
+msgid "Man"
+msgstr "Главная"
+
+#: mutual_funds/templates/accounts/profile.html:78
+#: mutual_funds/templates/accounts/update.html:58
+msgid "Woman"
+msgstr "Женщина"
+
+#: mutual_funds/templates/accounts/update.html:14
+msgid "Update Profile"
+msgstr "Обновить профиль"
+
+#: mutual_funds/templates/accounts/update.html:27
+msgid "LOAD"
+msgstr "ЗАГРУЗИТЬ"
+
+#: mutual_funds/templates/accounts/update.html:72
+msgid "SAVE"
+msgstr "СОХРАНИТЬ"
+
+#: mutual_funds/templates/accounts/update.html:73
+msgid "BACK"
+msgstr "НАЗАД"
+
+#: mutual_funds/templates/base.html:72 mutual_funds/templates/base.html:183
+#: mutual_funds/templates/landing/about.html:7
+#: mutual_funds/templates/landing/about.html:17
+msgid "About"
+msgstr "О нас"
+
+#: mutual_funds/templates/base.html:75
+msgid "Help"
+msgstr "Помощь"
+
+#: mutual_funds/templates/base.html:78
+msgid "Contact"
+msgstr "Контакты"
+
+#: mutual_funds/templates/base.html:137
+msgid "Settings"
+msgstr "Настройки"
+
+#: mutual_funds/templates/base.html:138
+#: mutual_funds/templates/registration/password_reset_confirm.html:20
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: mutual_funds/templates/base.html:139
+msgid "Logout"
+msgstr "Выйти"
+
+#: mutual_funds/templates/base.html:142
+msgid "Log In"
+msgstr "Войти"
+
+#: mutual_funds/templates/base.html:169
+#: mutual_funds/templates/finance/fund_detail.html:34
+msgid "Main"
+msgstr "Главная"
+
+#: mutual_funds/templates/base.html:174
+msgid "Mutual Funds"
+msgstr "ПИФы"
+
+#: mutual_funds/templates/base.html:178
+#: mutual_funds/templates/landing/faq.html:9
+#: mutual_funds/templates/landing/faq.html:21
+msgid "FAQ"
+msgstr "FAQ"
+
+#: mutual_funds/templates/finance/api/list.html:8
+msgid "Fund Name"
+msgstr "Наименование фонда"
+
+#: mutual_funds/templates/finance/api/list.html:9
+msgid "Finance Sector"
+msgstr "Финансовый сектор"
+
+#: mutual_funds/templates/finance/api/list.html:10
+msgid "Price"
+msgstr "Цена"
+
+#: mutual_funds/templates/finance/api/list.html:11
+msgid "Change in price"
+msgstr "Изменение цены"
+
+#: mutual_funds/templates/finance/fund_detail.html:20
+msgid "Fund detail"
+msgstr "О фонде"
+
+#: mutual_funds/templates/finance/fund_detail.html:37
+msgid "Management"
+msgstr "Управление"
+
+#: mutual_funds/templates/finance/fund_detail.html:40
+msgid "Analysis"
+msgstr "Анализ"
+
+#: mutual_funds/templates/finance/fund_detail.html:43
+msgid "Fund Detail"
+msgstr "О фонде"
+
+#: mutual_funds/templates/finance/fund_detail.html:50
+msgid "Basic information"
+msgstr "Основная информация"
+
+#: mutual_funds/templates/finance/fund_detail.html:79
+msgid "isin ticker"
+msgstr ""
+
+#: mutual_funds/templates/finance/fund_detail.html:83
+#: mutual_funds/templates/finance/ms_rating.html:44
+#: mutual_funds/templates/finance/sector_page.html:44
+msgid "MS rating"
+msgstr "MS рейтинг"
+
+#: mutual_funds/templates/finance/fund_detail.html:87
+#: mutual_funds/templates/finance/ms_rating.html:43
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:120
+#: mutual_funds/templates/finance/sector_page.html:22
+#: mutual_funds/templates/finance/sector_page.html:43
+msgid "Sector"
+msgstr "Сектор"
+
+#: mutual_funds/templates/finance/fund_detail.html:91
+msgid "Birth Date"
+msgstr "Дата рождения"
+
+#: mutual_funds/templates/finance/fund_detail.html:95
+msgid "current price"
+msgstr "текущая цена"
+
+#: mutual_funds/templates/finance/fund_detail.html:101
+msgid "Country"
+msgstr "Страна"
+
+#: mutual_funds/templates/finance/fund_detail.html:105
+#: mutual_funds/templates/finance/sectors_ranking.html:25
+msgid "Currency"
+msgstr "Валюта"
+
+#: mutual_funds/templates/finance/fund_detail.html:109
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:122
+msgid "Total assets"
+msgstr "Cовокупные активы"
+
+#: mutual_funds/templates/finance/fund_detail.html:113
+msgid "52Wk Range"
+msgstr ""
+
+#: mutual_funds/templates/finance/fund_detail.html:128
+msgid "Top Fund Holdings"
+msgstr ""
+
+#: mutual_funds/templates/finance/ms_rating.html:8
+#: mutual_funds/templates/finance/ms_rating.html:22
+#: mutual_funds/templates/finance/ms_rating.html:34
+#: mutual_funds/templates/includes/base_left_menu.html:7
+msgid "MS Rating"
+msgstr "MS рейтинг"
+
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:12
+msgid "Funds"
+msgstr "Фонды"
+
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:29
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:49
+msgid "Mutual Funds ranking"
+msgstr ""
+
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:41
+#, fuzzy
+#| msgid "Mutual Funds"
+msgid "Mutual Funds ranking view"
+msgstr "ПИФы"
+
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:52
+msgid "Filter"
+msgstr "Фильтровать"
+
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:94
+msgid "Only mine"
+msgstr "Только мои"
+
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:121
+msgid "MS"
+msgstr ""
+
+#: mutual_funds/templates/finance/mutual_funds_ranking.html:123
+msgid "Birth date"
+msgstr "Дата рождения"
+
+#: mutual_funds/templates/finance/sector_page.html:34
+msgid "Funds in"
+msgstr "Фондов в"
+
+#: mutual_funds/templates/finance/sectors_ranking.html:10
+msgid "Sectors"
+msgstr "Сектора"
+
+#: mutual_funds/templates/finance/sectors_ranking.html:32
+#: mutual_funds/templates/finance/sectors_ranking.html:52
+#: mutual_funds/templates/includes/base_left_menu.html:13
+msgid "Sectors' ranking"
+msgstr "Ранжирование секторов"
+
+#: mutual_funds/templates/finance/sectors_ranking.html:46
+msgid "Cumulative"
+msgstr "Кумулятивный"
+
+#: mutual_funds/templates/finance/sectors_ranking.html:49
+msgid "Discrete"
+msgstr "Дискретный"
+
+#: mutual_funds/templates/finance/sectors_ranking.html:63
+msgid "1m"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:64
+msgid "3m"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:65
+msgid "6m"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:66
+msgid "1y"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:67
+msgid "2y"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:68
+msgid "3y"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:69
+msgid "5y"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:73
+msgid "0-12m"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:74
+msgid "12-24m"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:75
+msgid "24-36m"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:76
+msgid "36-48m"
+msgstr ""
+
+#: mutual_funds/templates/finance/sectors_ranking.html:77
+msgid "48-60m"
+msgstr ""
+
+#: mutual_funds/templates/includes/base_indexes.html:6
+msgid "Indexes"
+msgstr "Индексы"
+
+#: mutual_funds/templates/includes/base_left_menu.html:10
+msgid "Mutual funds ranking"
+msgstr ""
+
+#: mutual_funds/templates/landing/faq.html:31
+msgid "Frequently Asked Questions"
+msgstr "Часто задаваемые вопросы"
+
+#: mutual_funds/templates/landing/main_page.html:20
+msgid "News"
+msgstr "Новости"
+
+#: mutual_funds/templates/landing/main_page.html:31
+msgid "Read more"
+msgstr "Читать дальше"
+
+#: mutual_funds/templates/landing/main_page.html:55
+msgid "Best 30 MFs"
+msgstr ""
+
+#: mutual_funds/templates/landing/main_page.html:60
+msgid "30 days"
+msgstr ""
+
+#: mutual_funds/templates/landing/main_page.html:63
+msgid "60 days"
+msgstr ""
+
+#: mutual_funds/templates/landing/main_page.html:66
+msgid "90 days"
+msgstr ""
+
+#: mutual_funds/templates/landing/news_page.html:38
+msgid "Other news"
+msgstr "Другие новости"
+
+#: mutual_funds/templates/registration/activate.html:6
+msgid "Account activation failed"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_complete.html:7
+#: mutual_funds/templates/registration/activation_complete.html:15
+msgid "Your account is activated"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_complete.html:20
+msgid "Your account is activated."
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_complete_admin_pending.html:4
+msgid "Account Activated"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_complete_admin_pending.html:8
+msgid "Your account is now activated."
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_complete_admin_pending.html:10
+msgid "Once a site administrator activates your account you can login."
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email.html:87
+#: mutual_funds/templates/registration/admin_approve_email.html:6
+msgid "registration"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email.html:207
+#, python-format
+msgid ""
+" You (or someone pretending to be you) have asked to register an account at "
+"%(site_name)s.  If this wasn't you, please ignore this email and your "
+"address will be removed from our records."
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email.html:214
+#, python-format
+msgid ""
+" To activate this account, please click the following link within the next "
+"%(expiration_days)s days:"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email.html:223
+msgid "Подтвердите адрес электронной почты"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email.html:231
+#, python-format
+msgid " Sincerely, %(site_name)s Management"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email.txt:2
+#, python-format
+msgid ""
+"\n"
+"You (or someone pretending to be you) have asked to register an account at\n"
+"%(site_name)s.  If this wasn't you, please ignore this email\n"
+"and your address will be removed from our records.\n"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email.txt:7
+#, python-format
+msgid ""
+"\n"
+"To activate this account, please click the following link within the next\n"
+"%(expiration_days)s days:\n"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email.txt:14
+#, python-format
+msgid ""
+"\n"
+"Sincerely,\n"
+"%(site_name)s Management\n"
+msgstr ""
+
+#: mutual_funds/templates/registration/activation_email_subject.txt:1
+#: mutual_funds/templates/registration/admin_approve_complete_email_subject.txt:1
+msgid "Account activation on"
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve.html:4
+msgid "Approval Failure"
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve.html:7
+msgid "Account Approval failed."
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_complete.html:4
+msgid "Account Approved"
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_complete.html:8
+msgid "The user's account is now approved."
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_complete_email.html:6
+msgid "admin approval"
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_complete_email.html:11
+msgid ""
+"\n"
+"    Your account is now approved. You can \n"
+"    "
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_complete_email.html:14
+msgid "log in."
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_complete_email.txt:2
+msgid ""
+"\n"
+"Your account is now approved. You can log in using the following link\n"
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_email.html:11
+#, python-format
+msgid ""
+"\n"
+"    The following user (%(user)s) has asked to register an account at\n"
+"    %(site_name)s.\n"
+"    "
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_email.html:17
+msgid ""
+"\n"
+"    To approve this, please \n"
+"    "
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_email.html:20
+msgid "click here"
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_email.html:23
+#, python-format
+msgid ""
+"\n"
+"    Sincerely,\n"
+"    %(site_name)s Management\n"
+"    "
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_email.txt:2
+#, python-format
+msgid ""
+"\n"
+"The following user (%(user)s) has asked to register an account at\n"
+"%(site_name)s.  \n"
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_email.txt:6
+msgid ""
+"\n"
+"To approve this, please click the following link.\n"
+msgstr ""
+
+#: mutual_funds/templates/registration/admin_approve_email_subject.txt:1
+msgid "Account approval on"
+msgstr ""
+
+#: mutual_funds/templates/registration/login.html:8
+#: mutual_funds/templates/registration/login.html:12
+#: mutual_funds/templates/registration/login.html:30
+msgid "Login"
+msgstr "Войти"
+
+#: mutual_funds/templates/registration/login.html:20
+#: mutual_funds/templates/registration/login.html:21
+msgid "Username or email"
+msgstr "Имя пользователя или адрес электронной почты"
+
+#: mutual_funds/templates/registration/login.html:25
+#: mutual_funds/templates/registration/login.html:26
+msgid "Password"
+msgstr "Пароль"
+
+#: mutual_funds/templates/registration/login.html:33
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: mutual_funds/templates/registration/login.html:43
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: mutual_funds/templates/registration/login.html:43
+msgid "Now!"
+msgstr "Сейчас"
+
+#: mutual_funds/templates/registration/login.html:52
+msgid "Please check username or/and password for errors"
+msgstr "Неправильно введен пароль или логин"
+
+#: mutual_funds/templates/registration/logout.html:7
+#: mutual_funds/templates/registration/logout.html:15
+msgid "Logout successfully"
+msgstr ""
+
+#: mutual_funds/templates/registration/logout.html:20
+msgid ""
+"\n"
+"                    Logout successfully\n"
+"                "
+msgstr ""
+
+#: mutual_funds/templates/registration/password_change_done.html:5
+msgid "Password changed"
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_complete.html:7
+#: mutual_funds/templates/registration/password_reset_complete.html:15
+msgid "Password changed successfully"
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_complete.html:20
+msgid ""
+"\n"
+"                    Password changed successfully\n"
+"                "
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_confirm.html:7
+#: mutual_funds/templates/registration/password_reset_confirm.html:11
+msgid "Password changing"
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_done.html:7
+#: mutual_funds/templates/registration/password_reset_done.html:15
+msgid "A new password has been sent to your e-mail address"
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_done.html:20
+msgid ""
+"\n"
+"                    A new password has been sent to your e-mail address\n"
+"                "
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_email.html:2
+#, python-format
+msgid "Reset password at %(site_name)s"
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_form.html:7
+#: mutual_funds/templates/registration/password_reset_form.html:11
+msgid "Reset password"
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_form.html:15
+msgid "Enter your email address and we will send recovery instructions"
+msgstr ""
+
+#: mutual_funds/templates/registration/password_reset_form.html:23
+msgid "Send mail"
+msgstr ""
+
+#: mutual_funds/templates/registration/registration_closed.html:5
+msgid "Registration is currently closed."
+msgstr ""
+
+#: mutual_funds/templates/registration/registration_complete.html:7
+#: mutual_funds/templates/registration/registration_complete.html:15
+msgid "Confirm email"
+msgstr ""
+
+#: mutual_funds/templates/registration/registration_complete.html:20
+msgid ""
+"\n"
+"                    Check email for more information\n"
+"                "
+msgstr ""
+
+#: mutual_funds/templates/registration/registration_form.html:7
+#: mutual_funds/templates/registration/registration_form.html:17
+msgid "Registration"
+msgstr ""
+
+#: mutual_funds/templates/registration/registration_form.html:58
+msgid "Register"
+msgstr ""
+
+#: mutual_funds/templates/registration/registration_form.html:71
+msgid "Already have an account?"
+msgstr ""
+
+#: mutual_funds/templates/registration/registration_form.html:71
+msgid "Sign in!"
+msgstr ""
+
+#: mutual_funds/templates/registration/resend_activation_complete.html:4
+msgid "Account Activation Resent"
+msgstr ""
+
+#: mutual_funds/templates/registration/resend_activation_complete.html:8
+#, python-format
+msgid ""
+"\n"
+"  We have sent an email to %(email)s with further instructions.\n"
+"  "
+msgstr ""
+
+#: mutual_funds/templates/registration/resend_activation_form.html:4
+msgid "Resend Activation Email"
+msgstr ""
+
+#: mutual_funds/templates/registration/resend_activation_form.html:10
+msgid "Submit"
+msgstr ""
+
+#: mutual_funds/utils/mixins.py:13 mutual_funds/utils/mixins.py:17
+#: mutual_funds/utils/mixins.py:18
+msgid "To perform this action necessary authorization"
+msgstr ""

@@ -1,0 +1,29 @@
+{% load filter_tag %}
+{% load i18n %}
+{% load sort_pretiffy_tag %}
+
+
+<thead>
+    <tr>
+        <th>{% trans 'Fund Name' %}</th>
+        <th>{% trans 'Finance Sector' %}</th>
+        <th>{% trans 'Price' %}</th>
+        <th>{% trans 'Change in price' %}</th>
+    </tr>
+</thead>
+<tbody>
+
+    {% for fund in funds %}
+        <tr id="{{ fund.id }}">
+            <td>
+                {% include 'includes/likes.html' %}
+                <a href="{{ fund.get_absolute_url }}">{{ fund.name }}</a>
+            </td>
+            <td>{{ fund.finance_sector|default_if_none:"-" }}</td>
+            <td>{{ fund.get_newest_price|safe }}</td>
+            <td>{{ fund.growth|prettify_percents }} %</td>
+        </tr>
+    {% endfor %}
+
+
+</tbody>

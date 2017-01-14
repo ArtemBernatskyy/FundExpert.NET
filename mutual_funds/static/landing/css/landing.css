@@ -1,0 +1,41 @@
+.featurette-divider {
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.post_list {
+    border-radius: 0px;
+    background: #FFF;
+    box-shadow: 0 5px 5px -5px rgba(0,0,0,0.3);
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.mylead{
+    font-size: 28px;
+    font-size: 2.8rem;
+    font-family: Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.post-detail-item{
+    padding-bottom: 8px;
+}
+
+.news_post{
+    width: 100%;
+}
+
+.other_new{
+    margin-bottom: 20px;
+    margin-top: 0px;
+}

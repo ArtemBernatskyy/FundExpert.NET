@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}
+    {{ block.super }} | {% trans 'About' %}
+{% endblock %}
+
+
+
+{% block body %}
+
+<!-- Page-Title -->
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="page-title">{% trans 'About' %}</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <!-- <div class="panel-heading">
+                                <h4>Invoice</h4>
+                            </div> -->
+            <div class="panel-body">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <h3 class="logo invoice-logo">Fundexpert</h3>
+                    </div>
+                    <div class="pull-right">
+                        <h4>Some about info<br>
+                                            <strong>Created: 02-01-1998</strong>
+                                        </h4>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <div class="clearfix">
+                            <h5 class="small text-inverse font-600">Our company bla bla ...</h5>
+                            <small>
+                                                
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor nibh magna, vitae accumsan nibh congue nec. Integer consequat nec nisi id laoreet. Curabitur tellus massa, ultrices sed dui non, luctus finibus augue. Mauris at luctus libero, non luctus augue. Nulla auctor, felis quis laoreet semper, lorem ipsum euismod lacus, non tincidunt purus est a sapien. Aenean varius arcu sed diam sagittis euismod. Cras id aliquam turpis. Pellentesque egestas arcu nec euismod tincidunt. Suspendisse felis diam, sodales sit amet metus rhoncus, blandit egestas urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae turpis varius odio pretium pretium vel vel enim. Etiam sit amet eros ultricies massa vestibulum maximus. Cras eleifend leo a tellus vulputate imperdiet. Cras mollis sit amet sapien eu sollicitudin. Curabitur ac tincidunt nisl, non hendrerit orci. Etiam a venenatis neque, vitae scelerisque elit.
+
+Aliquam maximus sapien velit, ut pulvinar enim molestie ut. Nunc finibus lorem id ornare bibendum. Vestibulum feugiat lorem mauris, sed maximus leo mollis eu. Curabitur blandit dui ut orci condimentum volutpat. Ut elit nunc, volutpat sit amet erat in, egestas congue augue. Donec non hendrerit quam. Praesent a mollis dolor, at ornare urna. Curabitur et maximus turpis. Vivamus vel ornare lorem, nec fermentum massa. Duis viverra vel purus ac porta. Proin sit amet leo at libero sagittis imperdiet gravida vitae magna. Nunc non pretium purus, sed lacinia dolor. Morbi gravida convallis purus, eu mollis urna. Suspendisse porttitor ornare erat, a tempor eros aliquet nec.
+
+Nam in risus vitae metus auctor vehicula a vitae est. Fusce varius in risus a rhoncus. Vivamus laoreet consequat risus et egestas. Sed pharetra, purus ullamcorper ullamcorper ultricies, diam risus mollis ligula, non malesuada felis nibh non velit. Nunc ex lectus, tempus sed dapibus at, consequat at justo. Duis malesuada ipsum sit amet lacus maximus, vel porta enim pharetra. Proin malesuada mollis ligula eget lobortis. Aliquam gravida tellus velit, non placerat purus pellentesque in. Donec malesuada tempor pulvinar. Sed nec nisi vitae nisl porttitor dictum viverra volutpat purus. Donec lacinia scelerisque turpis, quis iaculis nunc faucibus sed. Praesent ut est sed felis cursus efficitur. Maecenas a varius nisl, id molestie dolor. Donec efficitur hendrerit enim, a posuere enim dapibus vitae.
+
+Nulla dapibus ante non nibh efficitur tempus. Duis et velit eget turpis pretium gravida sit amet id dui. Vivamus efficitur dictum orci, eu pretium arcu. Donec volutpat quam lacinia porttitor sodales. Vestibulum sagittis dignissim ultricies. Sed volutpat at massa eu semper. Etiam eros magna, venenatis a iaculis non, pulvinar euismod arcu. Nulla iaculis mi sit amet arcu faucibus elementum. Curabitur tempus elit leo, vitae facilisis quam auctor in. Donec at urna justo.
+
+Etiam nec vehicula nisl. Maecenas sollicitudin feugiat bibendum. Fusce fringilla, nunc sit amet bibendum posuere, massa ex pellentesque quam, sed fermentum felis quam et magna. In quis turpis aliquet est ornare ornare. Sed tempus dapibus nunc, eget scelerisque ligula commodo vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus et consectetur dui, vitae volutpat lectus. 
+                                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <p class="text-right"><b>Here valuable info:</b> some year</p>
+                        <p class="text-right">Discout: 12.9%</p>
+                        <p class="text-right">VAT: 12.9%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+
+
+{% endblock body %}

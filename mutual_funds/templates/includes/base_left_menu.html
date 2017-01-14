@@ -1,0 +1,16 @@
+{% load i18n %}
+{% load static %}
+
+<div class="col-sm-2">
+    <ul class="list-group">
+        <a href="{% url 'finance:ms_rating' %}" class="list-group-item {% if request.resolver_match.view_name == 'finance:ms_rating' %}active{% endif %}">
+            {% trans 'MS Rating' %}
+        </a>
+        <a href="{% url 'finance:mf_ranking' %}" class="list-group-item {% if request.resolver_match.view_name == 'finance:mf_ranking' %}active{% endif %}">
+            {% trans 'Mutual funds ranking' %}
+        </a>
+        <a href="{% url 'finance:sectors_ranking' %}" class="list-group-item {% if request.resolver_match.view_name == 'finance:sectors_ranking' %}active{% endif %}">
+            {% trans "Sectors' ranking" %}
+        </a>
+    </ul>
+</div>

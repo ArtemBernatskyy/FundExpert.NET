@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load imagekit %}
+
+
+{% block head_extra_css %}
+<!-- responsive table css -->
+<link href="{% static 'theme/plugins/RWD-Table-Patterns/dist/css/rwd-table.min.css' %}" rel="stylesheet" type="text/css" media="screen">
+{% endblock %}
+
+
+{% block head_page_style %}
+<link href="{% static 'landing/css/landing.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+{% block body %}
+
+<div class="row">
+    <div class="col-sm-8 col-lg-7 col-lg-offset-1">
+        <h2 class="page-title">{% trans 'News' %}</h2>
+        <div class="card-box">
+
+            {% for post in news_posts %}
+                <hr class="featurette-divider">
+                <div class="row featurette post_list news-object" onclick="window.location = '{{ post.get_absolute_url }}'">
+                    <div class="col-sm-7 col-sm-push-5 right-text">
+                        <a href='{{ post.get_absolute_url }}'><h2 class="a2 mylead news-header">{{ post.title|truncatechars:30 }}</h2>
+                        </a>
+                        <div class="post-detail-item news-description">
+                            {{ post.text|safe|truncatechars_html:120 }}
+                            <button type="button" onclick="window.location = '{{ post.get_absolute_url }}'" class="btn btn-default">{% trans 'Read more' %} &rarr;</button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-sm-pull-7 left-image-col hidden-xs">
+                        <img class="featurette-image img-responsive center-block left-image"
+                            src="{{ post.image_thumbnail.url }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-lg-4 pull-right hidden-xs">
+        {% include 'includes/base_indexes.html' %}
+    </div>
+
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <h4 class="page-title">{% trans 'Best 30 MFs' %}</h4>
+        <div class="card-box">
+            <div class="table-rep-plugin">
+                
+                <div class="btn-group m-b-10" data-toggle="buttons">
+                  <label class="btn btn-default active">
+                    <input type="radio" class="load_radio" data-days="30" name="options" id="option1" checked>{% trans '30 days' %}
+                  </label>
+                  <label class="btn btn-default">
+                    <input type="radio" class="load_radio" data-days="60" name="options" id="option2"> {% trans '60 days' %}
+                  </label>
+                  <label class="btn btn-default">
+                    <input type="radio" class="load_radio" data-days="90" name="options" id="option3"> {% trans '90 days' %}
+                  </label>
+                </div>
+                        
+                <div class="table-responsive">
+                    <table id="landing_datatable" class="table  table-striped">
+                    {% include 'finance/api/list.html' %}
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+
+{% block page_script_base %}
+{% include 'includes/likes_js.html' %}
+{% endblock page_script_base %}
+
+
+
+{% block extra_script_base %}
+<!-- Responsive Datatables-->
+<script src="{% static 'theme/plugins/RWD-Table-Patterns/dist/js/rwd-table.min.js' %}"></script>
+
+<script type="text/javascript">
+
+$(".load_radio").on("change", function() {
+    days = parseInt($(this).data("days"));
+    $.ajax({
+        url:"{% url 'fund-api:list' %}",
+        type: 'GET',
+        data: {'days': days},
+        dataType: 'HTML',
+        success: function(data){
+            $('#landing_datatable').html(data);
+            // reseting listeners and restarting them
+            {% if request.user.is_authenticated %}
+                setLikes();
+            {% endif %}
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,45 @@
+<script type="text/javascript">
+{% if request.user.is_authenticated %}
+function setLikes(){
+    $(".like_or_unlike_fund").click(function(e){
+        e.preventDefault();
+        ths = $(this);
+        tr = ths.parents("tr");
+        csrf = tr.find("input[name='csrfmiddlewaretoken']").val();
+
+        // checking if like or dislike
+        like_button = tr.find("td a:first i");
+        // if need like
+        if (like_button.hasClass("fa-heart-o")){
+            type_send = "PUT";
+        // if need dislike
+        } else if (like_button.hasClass("fa-heart")){
+            type_send = "DELETE";
+        }
+
+        $.ajax({
+            type: type_send,
+            url: "{% url 'account-api:likedfund_change' %}",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("X-CSRFToken", csrf);
+            },
+            data: {"fund_id":tr.attr("id")},
+            success: function (data) {
+                if (data=='successfully liked fund'){
+                    like_button.removeClass("fa-heart-o");
+                    like_button.addClass("fa-heart");
+                } else if (data=='successfully unliked fund'){
+                    like_button.removeClass("fa-heart");
+                    like_button.addClass("fa-heart-o");
+                } else {
+                    toastr["warning"]("some errors, contact admin");
+                }
+
+            }
+        });
+
+    })
+};
+setLikes();
+{% endif %}
+</script>

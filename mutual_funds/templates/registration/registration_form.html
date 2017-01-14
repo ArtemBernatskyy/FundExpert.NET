@@ -1,0 +1,91 @@
+{% extends 'registration/base.html' %}
+
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block title %}
+    {% trans 'Registration' %}
+{% endblock %}
+
+{% block head_page_script %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+
+
+
+{% block form_title %}
+    {% trans 'Registration' %}
+{% endblock %}
+
+{% block form %}
+    {% bootstrap_form_errors form %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% bootstrap_field form.username %}
+
+        <div class="m-t-40">
+
+            <div class="row">
+                <div class="col-xs-6">
+                    {% bootstrap_field form.first_name %}
+                </div>
+                <div class="col-xs-6">
+                    {% bootstrap_field form.last_name %}
+                </div>
+            </div>
+
+            {% bootstrap_field form.email %}
+        </div>
+
+
+        <div class="m-t-40">
+            {% bootstrap_field form.password1 %}
+            {% bootstrap_field form.password2 %}
+
+
+        </div>
+
+
+        <div class="m-t-40">
+            {% bootstrap_field form.captcha %}
+        </div>
+
+
+        <div class="m-t-40">
+            <button class="btn btn-bordred btn-block waves-effect waves-light btn-warning w-md  m-b-5" style="    color: black !important;" type="submit">
+                {% trans 'Register' %}
+            </button>
+        </div>
+
+    </form>
+
+
+{% endblock %}
+
+
+{% block page_script %}
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <p class="text-muted">{% trans 'Already have an account?' %}<a href="{% url 'auth_login' %}" class="text-primary m-l-5"><b>{% trans 'Sign in!' %}</b></a></p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_style %}
+    {{ form.media.css }}
+{% endblock %}
+
+{% block page_script_base %}
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <script type="text/javascript">
+                    toastr["warning"]("{{ error|escape }}")
+                </script>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+    {{ form.media.js }}
+{% endblock %}

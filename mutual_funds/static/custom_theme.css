@@ -1,0 +1,280 @@
+a {
+    font: 400 16px/1.7 proxima-nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+
+body{
+    /*background: #fff;*/
+    padding-bottom: 90px;
+    min-height: 1200px;
+}
+
+li a {
+    color: #fff;
+}
+
+body > div > div > div.row > div.col-sm-10 > div > div > div > div.panel-heading{
+    background-color: #0069ff;
+}
+
+p {
+    font: 400 16px/1.7 proxima-nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.25;
+}
+
+#topnav .topbar-main {
+    background-color: #0069ff;
+}
+
+.logo span span {
+    color: #164e9c !important;
+}
+
+#topnav .app-search .form-control {
+    background: rgb(97, 162, 255);
+}
+
+#topnav .topbar-main .nav > li > a {
+    color: #ffffff !important;
+/*    line-height: 60px;*/
+    padding: 0px 15px;
+    position: relative;
+    background: transparent !important;
+    font: inherit;
+    font-style: inherit;
+    font-variant-ligatures: inherit;
+    font-variant-caps: inherit;
+    font-variant-numeric: inherit;
+    font-weight: 600;
+    font-stretch: inherit;
+    font-size: 16px;
+    line-height: 60px;
+    font-family: inherit;
+}
+
+.footer{
+    background: #2e3234;
+    color: #fff;
+}
+
+.footer ul li a {
+    color: #fff;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+.custom-footer{
+    font: 400 16px/1.7 proxima-nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    line-height: 1.25;
+}
+
+.fa-heart{
+    color: #0069ff;
+}
+
+.mf-dropdown{
+    padding-top: 10px;
+    width: 589px;
+    height: 304px;
+}
+
+
+/*Profile*/
+.profile-tab{
+    background-color: #ffffff;
+}
+
+.profile-tab-content{
+    border-color: white;
+}
+
+.profile-card-box{
+    min-height: 500px;
+}
+
+.profile-table-border{
+    border: 2px solid #eeeeee;
+    border-right-color: rgb(238, 238, 238);
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-bottom-color: rgb(238, 238, 238);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-left-color: rgb(238, 238, 238);
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+
+/*Right indexes*/
+.indexes-css{
+    margin-bottom:40px;
+}
+
+.lan-pick{
+    position: relative;
+    margin: 15px 30px 15px 10px;
+}
+
+
+/*sectors ranking*/
+#sector_datatable td, #sector_datatable td:nth-child(2n), #sector_datatable a:nth-child(1){
+    padding: 1px 1px 1px 4px;
+    font-size: 14px;
+}
+
+/*mutual funds ranking*/
+#mutual_funds_datatable td, #mutual_funds_datatable td:nth-child(2n), #mutual_funds_datatable a:nth-child(1), #mutual_funds_datatable a:nth-child(3){
+    padding: 1px 1px 1px 4px;
+    font-size: 14px;
+}
+
+.only_my_text{
+    font-weight: normal;
+    font-size: 14px;
+}
+
+
+/*landing list*/
+#landing_datatable > tbody > tr > td{
+    padding: 0px 8px 0px 8px;
+}
+
+
+/*landing news list*/
+.right-text{
+    max-height: inherit;
+}
+
+.small-text{
+    font-size: 14px;
+}
+
+p{
+    font-size: 14px;
+}
+
+.left-image-col{
+    /*position: absolute;*/
+    max-height: inherit;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+a > h2.news-header{
+    font-size:20px;
+}
+
+.news-description p{
+    font-size:12px;
+}
+
+.left-image{
+    max-height: inherit;
+}
+
+.news-object{
+    max-height: 150px;
+    cursor: pointer;
+}
+
+.ms-stars{
+    padding-left: 8px;
+}
+
+/*finance.com hider*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+svg > text.highcharts-credits{
+    display: none;
+}
+
+.wrapper-hidder{
+    top: -24px;
+    position:relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+.customlogo{
+    margin-bottom: 260px;
+    position: absolute;
+    width: 302px;
+    height: 26px;
+    background: #ebeff2;
+    right: -1px;
+    bottom: 6px;
+    z-index: 999;
+    display: block;
+    color: #fff;
+}
+
+
+/*funds detail page*/
+body > div > div > div.row > div.col-sm-10 > div > div > div > div.panel-body.fund-detail-body{
+    padding: 7px 10px 10px 10px;
+}
+
+.fund-detail-card-box{
+    border-radius: 0px;
+}
+
+.fund-detail-panel{
+    background-color: rgb(235, 239, 242);
+    box-shadow: initial;
+}
+
+body > div > div > div.row > div.col-sm-10 > div > div > div > div.panel-heading > ul > li.active > a.fund-detail-active{
+    background-color: rgba(249, 249, 249, 0.97) !important;
+}
+
+.fund-detail-graph{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.fund-tab-content{
+    min-height: 600px;
+}
