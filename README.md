@@ -1,5 +1,5 @@
-### Mutual Funds (public repo)  
-[Live here](http://fundexpert.net/)  
+## Mutual Funds (public repo)  
+
 "Financial aggregator and news provider"
 
 Technology stack: Python, Django, PostgreSQL, Redis, HTML, CSS, JS, Vagrant, Celery, NginX, Gunicorn 
