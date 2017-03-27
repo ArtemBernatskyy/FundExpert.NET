@@ -34,4 +34,3 @@ based on cron time.
 - And a lot of parsed history date :)  P.S. about 6k history ticks per fund    
 
 ![alt tag](https://s3-eu-west-1.amazonaws.com/bernatskyys/github/7.png)  
-
